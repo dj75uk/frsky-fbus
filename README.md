@@ -4,12 +4,11 @@
 Enable reliable communication between FrSky FBUS-enabled receivers and custom actuator or telemetry hardware by decoding and implementing the proprietary FBUS protocol on a non-FrSky platform.
 
 ## Background  
-FrSky’s FBUS protocol consolidates SBUS and S.Port telemetry into a single, high-speed serial stream (typically **460800 baud, 8N1, inverted logic**). While it offers streamlined wiring and reduced latency, FBUS remains undocumented and proprietary, posing significant challenges for developers seeking to integrate third-party hardware—such as custom servos, telemetry sensors, or flight control units—into FrSky ecosystems.
+FrSky’s FBUS protocol consolidates SBUS and S.Port telemetry into a single, high-speed serial stream (typically **100000 baud, 8N1, inverted logic**). While it offers streamlined wiring and reduced latency, FBUS remains undocumented and proprietary, posing significant challenges for developers seeking to integrate third-party hardware—such as custom servos, telemetry sensors, or flight control units—into FrSky ecosystems.
 
 ## Challenges  
 - **Protocol Obfuscation**: FBUS lacks public documentation, requiring reverse engineering to identify packet structure, sync patterns, and telemetry mappings.  
-- **Timing Sensitivity**: At 460800 baud, precise timing and interrupt handling are critical, especially on resource-constrained microcontrollers.  
-- **Signal Conditioning**: FBUS uses inverted logic and non-standard voltage levels, necessitating robust level shifting and galvanic isolation for safe interfacing.  
+- **Timing Sensitivity**: At 100000 baud, precise timing and interrupt handling are critical, especially on resource-constrained microcontrollers.  
 - **Bidirectional Communication**: Unlike SBUS (unidirectional), FBUS supports telemetry return, requiring dynamic role switching and collision avoidance.  
 - **Compatibility Mapping**: FBUS behavior varies across receiver models (e.g., Archer Plus vs. legacy RX), and may include undocumented quirks or channel remapping.
 
